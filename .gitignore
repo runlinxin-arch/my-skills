@@ -1,0 +1,20 @@
+# Created by the skill's virtualenv; never commit it.
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# macOS / editors
+.DS_Store
+.idea/
+.vscode/
+
+# Conversion output
+/out/
+*.tmp
+
+# Stray telemetry file written by onnxruntime during conversion
+:memory:.ses

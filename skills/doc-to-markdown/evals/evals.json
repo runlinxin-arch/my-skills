@@ -1,0 +1,32 @@
+{
+  "skill_name": "doc-to-markdown",
+  "evals": [
+    {
+      "id": 0,
+      "name": "single-docx",
+      "prompt": "帮我把这个文件转成 markdown：evals/fixtures/季度总结.docx",
+      "expected_output": "在输出目录下生成 季度总结.md，标题层级和表格内容保留",
+      "files": ["evals/fixtures/季度总结.docx"]
+    },
+    {
+      "id": 1,
+      "name": "pptx-and-xlsx",
+      "prompt": "我这有两个文件：evals/fixtures/产品方案.pptx 和 evals/fixtures/销售数据.xlsx，想把里面的内容提出来做成 md 文件",
+      "expected_output": "在输出目录下生成 产品方案.md 和 销售数据.md，幻灯片文字和表格数据完整",
+      "files": [
+        "evals/fixtures/产品方案.pptx",
+        "evals/fixtures/销售数据.xlsx"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "pdf-and-epub",
+      "prompt": "把 evals/fixtures/团队白皮书.pdf 和 evals/fixtures/小书.epub 转成 markdown",
+      "expected_output": "在输出目录下生成 团队白皮书.md 和 小书.md，正文文字完整可读",
+      "files": [
+        "evals/fixtures/团队白皮书.pdf",
+        "evals/fixtures/小书.epub"
+      ]
+    }
+  ]
+}
