@@ -25,8 +25,8 @@ try:
 except ImportError:
     sys.exit(
         "markitdown is not installed for this interpreter.\n"
-        "Run scripts/setup.sh once to create the skill's virtualenv, or install\n"
-        "the dependencies manually:  python3 -m pip install -r requirements.txt"
+        'Install once globally:  python -m pip install "markitdown[all]"\n'
+        'Or run via uv:  uv run --with "markitdown[all]" scripts/convert.py <file>'
     )
 
 DEFAULT_OUTDIR = Path(

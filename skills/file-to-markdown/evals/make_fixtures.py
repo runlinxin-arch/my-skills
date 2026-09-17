@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Generate test fixtures for the doc-to-markdown skill evals."""
+"""Generate test fixtures for the file-to-markdown skill evals."""
 from pathlib import Path
 
-FIXTURES = Path("/Users/rain/.agents/skills/doc-to-markdown-workspace/fixtures")
+FIXTURES = Path(__file__).parent / "fixtures"
 FIXTURES.mkdir(parents=True, exist_ok=True)
 
 # --- docx ---

@@ -1,25 +1,30 @@
 ---
-name: doc-to-markdown
+name: file-to-markdown
 description: 把 docx、word、pptx、PDF、epub 电子书、xlsx 等文档转换成 Markdown，统一输出到 ~/skills。只要用户拖入或提到这类文件、并想把它们转成 markdown / 提取文字内容 / 读取文档内容，就一定要用这个 skill，即使用户没有明说"转换"。内置转换脚本，直接调用即可，不要自己临时写转换代码。Use when converting .docx/.doc/.pptx/.pdf/.epub/.xlsx files to Markdown or extracting their text content.
 ---
 
-# doc-to-markdown
+# file-to-markdown
 
 把办公文档和电子书转成 Markdown。支持：`.docx`、`.doc`（word 文档）、`.pptx`、`.pdf`、`.epub`、`.xlsx`。
 
 ## 用法
 
-下面命令里的路径都相对于本 skill 所在目录（记作 `<skill>`）。优先用 skill 自带的虚拟环境，没有就退回系统 `python3`：
+本 skill 无需安装步骤，复制到 skills 目录即可用。转换命令（`<skill>` 指本 skill 所在目录）：
 
 ```bash
-PY="<skill>/.venv/bin/python"; [ -x "$PY" ] || PY=python3
-"$PY" "<skill>/scripts/convert.py" <文件路径> [更多文件...]
+python "<skill>/scripts/convert.py" <文件路径> [更多文件...]
 ```
 
-首次使用如果 `.venv` 还不存在，先跑一次安装（只需一次）：
+依赖只有一个：`markitdown[all]`。脚本运行报 `ImportError` 时说明当前 Python 环境没装，现场装一次即可（全局有效，以后不再装）：
 
 ```bash
-bash "<skill>/scripts/setup.sh"
+python -m pip install "markitdown[all]"
+```
+
+装了 `uv` 的机器可以不污染系统环境，改为：
+
+```bash
+uv run --with "markitdown[all]" "<skill>/scripts/convert.py" <文件路径>
 ```
 
 ## 输出
